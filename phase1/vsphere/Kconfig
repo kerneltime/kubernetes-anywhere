@@ -12,12 +12,27 @@ config phase1.vSphere.port
 		The vCenter port
 
 config phase1.vSphere.username
-	string "vCenter username"
+	string "vCenter username for creating VMs"
 	help
 		The vCenter Username
 
 config phase1.vSphere.password
-	string "vCenter password"
+	string "vCenter password for creating VMs"
+	help
+		The vCenter password
+
+config phase1.vSphere.folder
+	string "vCenter folder to create VMs"
+	help
+		The vCenter folder
+
+config phase1.vSphere.k8s_username
+	string "vCenter username for cloud provider in kubernetes"
+	help
+		The vCenter Username
+
+config phase1.vSphere.k8s_password
+	string "vCenter password for cloud provider in kubernetes"
 	help
 		The vCenter password
 

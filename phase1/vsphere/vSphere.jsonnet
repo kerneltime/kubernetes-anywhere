@@ -72,8 +72,8 @@ function(config)
         cloudprovider: {
           template: "${file(\"vsphere.conf\")}",
           vars: {
-            username: cfg.vSphere.username,
-            password: cfg.vSphere.password,
+            username: cfg.vSphere.k8s_username,
+            password: cfg.vSphere.k8s_password,
             vsphere_server: cfg.vSphere.url,
             port: cfg.vSphere.port,
             allow_unverified_ssl: cfg.vSphere.insecure,
@@ -90,7 +90,7 @@ function(config)
       "vsphere_folder":{
         "cluster_folder": {
           datacenter: cfg.vSphere.datacenter, 
-          path: cfg.cluster_name,
+          path: cfg.vSphere.folder + "/" + cfg.cluster_name,
         },
       },
       vsphere_virtual_machine: {
